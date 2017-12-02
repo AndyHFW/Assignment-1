@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Dungeon Crawler</title>
+	<meta name="author" content="Andy Wang"/>
+	<meta name="description" content="A site featuring a mini dungeon crawler"/>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="assignment1.css">
+	<script src="mazeJS.js"></script>
+</head>
+
+<body>
+<header>
+	<nav>
+		<ul>
+			<li><a href="./index.html">Home</a></li>
+			<li><a href="./dungeonDesign.html">Design</a></li>
+		</ul>
+	</nav>
+</header>
+<h1>Basic Dungeon Crawler</h1>
+<section class="mainGame">
+	<div class="columnContainer">
+		<textarea overflow-y: scroll; class="columnOne" id="output" readonly>
+Welcome, adventurer, to this simple dungeon.
+Try to collect as much gold as you can before leaving or dying.
+You are currently in the dungeon entrance.
+		</textarea>
+		<div class="columnTwo">
+			<div id="dataTable">
+				<table id="showData">
+					<tr>
+						<th>Level</th>
+						<td id="levelCell" colspan="2"></td>
+					</tr>
+					<tr>
+						<th>HP</th>
+						<td id="hpCell"></td>
+						<td id="totalhpCell">/10</td>
+					</tr>
+					<tr>
+						<th>EXP</th>
+						<td id="expCell"></td>
+						<td id="totalexpCell">/5</td>
+					</tr>
+					<tr>
+						<th>Gold</th>
+						<td id="goldCell" colspan="2"></td>
+					</tr>
+				</table>
+			</div> <!--end dataTable-->
+			<div id="buttonDiv">
+				<table class="buttons">
+					<tr>
+						<td>
+							<button type="button" onclick="fightMonster()" id="fight">Fight</button>
+						</td>
+						<td>
+							<button type="button" onclick="runMonster()" id="run">Run</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button type="button" onclick="roomType()" id="continue">Continue</button>
+						</td>
+						<td>
+							<button type="button" onclick="quitGame()" id="quit">Quit</button>
+						</td>
+					</tr>
+				</table>
+			</div> <!--end buttonDiv-->
+		</div> <!--end columnTwo-->
+	</div> <!--end columnContainer-->
+</section> <!--end mainGame-->
+
+<section id="rules">
+	<h2>How to play</h2>
+	<p>
+		Collect gold and level up by fighting monsters and finding treasure in this simple dungeon
+		crawler!
+	</p>			
+	<p>
+		As you explore the dungeon, you will encounter monsters that you may choose to fight. 
+		You may obtain valuable treasure and healing potions by opening treasure chests,
+		but be wary of deadly traps that may be hidden within. The game ends when you leave 
+		the dungeon or succumb to the dangers within.For detailed instructions,	see the 
+		<a href="./dungeonDesign.html#detailedRules"><strong>Design</strong></a> page.
+	</p>
+</section> <!--end rules-->
+
+</body>
+</html> 

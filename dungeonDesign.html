@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Dungeon Crawler Design</title>
+	<meta name="author" content="Andy Wang"/>
+	<meta name="description" content="A site featuring a mini dungeon-crawler"/>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="assignment1.css">
+</head>
+
+<body>
+<header>
+	<nav>
+		<ul>
+			<li><a href="./index.html">Home</a></li>
+			<li><a href="./dungeonDesign.html">Design</a></li>
+		</ul>
+	</nav>
+</header>
+<h1>Inspiration and Trivia</h1>
+<section id="inspiration">
+	<h2>Inspiration</h2>
+	<div id="diceRolls">
+		<h3>Dungeons and Dragons</h3>
+			<p>
+				The core mechanic of this game, random "dice" rolls, is inspired by Dungeons and Dragons.
+				Almost every random element is governed by a random number generator between 1 and 20. This 
+				mirrors the famous 20-sided die (d20) often seen in DnD games. In addition to the numbers, 
+				many rolls involve a special effect when either a 1 or a 20 is rolled.
+			</p>
+			<table id="natRolls">
+				<tr>
+					<th></th><th>Rolling 1</th><th>Rolling 20</th>
+				</tr>
+				<tr>
+					<td>Room selection</td><td>"Unlucky" room (-5 HP)</td><td>N/A</td>
+				<tr>
+					<td>Combat</td><td>Catastrophic defeat (-5 HP)</td><td>Dominating victory (+20 gold, +5 EXP)</td>
+				</tr>
+				<tr>
+					<td>Running</td><td>Fatal wound (death)</td><td>N/A</td>
+				</tr>
+				<tr>
+					<td>Treasure</td><td>Severe damage from trap (-5 HP)</td><td>N/A</td>
+				</tr>
+			</table> <!--end natRolls-->
+			<p id="fontAdjust">
+				After listing these out, I realized I didn't include many bonuses for rolling a 20. Sorry adventurers!
+			</p>
+	</div> <!--end diceRolls-->
+	<div id="dunGames">
+		<h3>Dungeon Crawler Games</h3>
+			<p>
+				"Dungeon crawlers" and the like have been a somewhat niche, but consistently represented genre in video
+				games.
+			</p>
+			<p>
+				The game I thought about the most was <a href="http://store.steampowered.com/app/262060/Darkest_Dungeon/">
+				Darkest Dungeon</a>. I was really tempted to put some quotes in reference to it, but I thought that they
+				may have been too Lovecraftian for this simple dungeon. Thankfully, my game isn't quite as difficult as
+				Darkest Dungeon (although there was one time I rolled 1 on room generation 3x in a row and died immediately...).
+			</p>
+			<figure id="darkFigure">
+				<img src="http://cdn.akamai.steamstatic.com/steam/apps/262060/ss_621351309428bbbdd1ac69452a5f666195dcc7fb.600x338.jpg?t=1506359920"
+				alt="Darkest Dungeon" title="Darkest Dungeon" id="darkImg">
+				<figcaption id="darkCaption">
+					<em>A battle in Darkest Dungeon. As its name suggests, the main gameplay involves exploring dungeons. The
+					game is strongly influenced by Lovecraft, featuring twisted monsters and eldritch beings. Darkest Dungeons
+					is highly RNG-based - a stroke of misfortune and you may find your carefully-raised characters wiped out.</em>
+				</figcaption>
+			</figure> <!--end darkFigure-->
+			<p>
+				Other dungeon crawlers I thought about included: Etrian Odyssey, Rogue Legacy, Crypt of the Necrodancer, etc.
+				This is nowhere near a comprehensive list of good dungeon crawlers. In fact, it only includes games where the 
+				majority of gameplay takes place in dungeons. 
+			</p>
+			<figure id="EOFigure">
+				<img src="./EtrianOdyssey.jpg" alt="Etrian Odyssey" title="Etrian Odyssey" id="EOImg">
+				<figcaption id="EOCaption">
+					<em>A battle and map from Etrian Odyssey DS. Etrian Odyssey is a classic RPG series with a long history. The 
+					games themselves are very light on story, focusing more on mechanics and old school RPG gameplay. A main 
+					feature of the series is drawing your own maps. Add on unforgiving battles and roaming boss monsters and
+					you have a recipe for a game for experienced dungeon crawlers.</em>
+				</figcaption>
+			</figure> <!--end EOFigure-->
+			<p title="Look at me, I play games">
+				Dungeons are an important component of many RPGs and MMORPGs. Some RPGs include: Legend of Zelda, Pokemon 
+				(Mystery Dungeon), Fire Emblem Echoes, Bloodborne, etc. 
+			</p>
+			<p id="paraRPG" title="Mabinogi is probably my favourite MMO. Too bad the population is dwindling (and it's getting old)...">
+				In addition, almost all MMORPGs include some form of dungeon exploration (e.g. Mabinogi, Runescape, Dragon Nest, etc.).
+				Mabinogi was actually the original inspiration for this game. Each dungeon has this main entrance, and the basic
+				structure is composed of monster rooms and treasure rooms.
+			</p>
+			<figure id="bloodFigure">
+				<img src="./bloodborneImg.jpg" 
+				alt="Bloodborne" title="Bloodborne" id="bloodImg">
+				<figcaption id="bloodCaption">
+				<em>A chalice dungeon in Bloodborne. Traditional dungeon crawling isn't exactly a core component of Bloodborne, but
+				dungeons do exist in the game. I was also feeling the eldritch influence when making this page and I needed something
+				to fill space in a desktop layout, so here it is.</em>
+				</figcaption>
+			</figure> <!--end bloodFigure - this figure is only shown when on a desktop format (min-width: 768px)-->
+			<figure id="mabiFigure">
+				<img src="http://nxcache.nexon.net/mabinogi/microsite/BeginnerGuide/img/img_cs8-2.jpg" alt="Mabinogi" title="Mabinogi" id="mabiImg">
+				<figcaption id="mabiCaption">
+					<em>A dungeon entrance in Mabinogi. When the game was first released, a large proportion of content was
+					focused on dungeons. Every dungeon was randomly generated, with monster rooms, treasure rooms, and boss
+					rooms. As the game aged, dungeons fell to the wayside, largely replaced by newer content.</em>
+				</figcaption>
+			</figure> <!--end mabiFigure-->
+	</div> <!--end dunGames-->
+	<div id="inspireList">
+		<h3>List of inspiration<h3>
+		<ul>
+			<li>Games</li>
+				<ul id="gameList">
+				<li>Mabinogi</li>
+				<li>Darkest Dungeon</li>
+				<li>Dungeons and Dragons</li>
+				<li>Etrian Odyssey</li>
+				</ul>
+			<li title="I'm a weeb">Manga, Anime, and Light Novels</li>
+				<ul id="bookList" title="I'm a weeb">
+				<li>Overlord</li>
+				<li>Dungeon Meshi</li>
+				<li>Sword Art Online</li>
+				<li>The Rising of the Shield Hero</li>
+				<li>The Legendary Moonlight Sculptor</li>
+				<li>etc.</li>
+				</ul>
+		</ul>
+	</div> <!--end inspireList-->
+</section> <!--Inspiration-->
+<section id="trivia">
+	<h2>Trivia</h2>
+	<h3>Unlucky rooms</h3>
+	<p>
+		There were originally going to be more variations of the unlucky room, apart from the
+		current pit of spikes. Unfortunately (or fortunately), I decided my time would probably
+		be better spent studying for the midterm. Here were some potential rooms:
+	</p>	
+	<table id="unlucky">
+		<tr>
+			<th>Room</th><th>Reference</th>
+		<tr>
+		<tr>
+			<td>Pit of spikes</td><td>N/A (it's just a pit of spikes)</td>
+		</tr>
+		<tr>
+			<td title="Even in Touhou, FOE">FOE (°д°)</td><td>Etrian Odyssey/Touhou</td>
+		</tr>
+		<tr>
+			<td>Ambushed by foul invention!</td><td>Darkest Dungeon</td>
+		</tr>
+		<tr>
+			<td title="That's a stretch...">Roll into a pit</td><td>Dark Souls</td>
+		</tr>
+	</table> <!--end unlucky-->
+	<div id="detailedRules">
+		<h2>Detailed Rules</h2>
+			<p>
+				I wrote a set of detailed rules before noticing the length limitation on the assignment.
+				I didn't want to discard everything else, so here it is.
+			</p>
+			<h3>Earning gold</h3>
+				<p>
+					There are two ways to earn gold: defeating monsters or opening treasure chests. The amount of 
+					gold earned from monsters depends on the difficulty of the monster
+				</p>
+				
+				<h3>Navigating the dungeon</h3>
+				<p>
+					The dungeon contains three room types: monster rooms, treasure rooms, and "unlucky" rooms.
+					You will advance to a random room by pressing the continue button after taking an action in 
+					the current room.
+				</p>
+				
+				<h3>Combat</h3>
+				<p>
+					When you encounter a monster, you may choose to fight or run. If you choose to fight, you must
+					roll higher than a number that depends on the difficulty of the monster. As you level up, it may
+					become easier to defeat enemies you previously struggled against.
+				</p>
+				<p>
+					The consequences of	losing a fight also depends on the monster level. The difficulty of	running 
+					from a monster is constant, but turning your back to the enemy can have fatal consequences.
+				</p>
+				<p>
+					There are four different levels of monsters. As you gain experience and venture deeper into the
+					dungeon, the chance of encountering a dangerous enemy increases.
+				</p>
+				<h3>Treasure</h3>
+				<p>
+					Monsters aren't the only thing that can be found in a dungeon. Many adventurers are drawn to the 
+					dungeon, lured in by the promise of treasure. If you're lucky, you may find gold and rare
+					healing potions in treasure chests. However, all that glisters is not gold. Many treasure rooms
+					conceal dangerous traps, which may prove fatal to a clumsy adventurer.
+				</p>
+				<h3>Leveling</h3>
+				<p>
+					You will gain experience as you brave the trials of the dungeon. At certain experience thresholds,
+					you will level up, improving your hardiness and combat ability. Each level you gain increases your
+					maximum HP by 2 and reduces the required combat rolls by 1. Leveling up also heals you completely.
+					Try to keep an eye on your HP and EXP when making decisions!
+				</p>
+				<h3>Ending the game</h3>
+				<p>
+					The game can end in two ways: death or retreat. When you hit 0 HP, your character dies and the game
+					immediately ends. Alternatively, you may decide to retreat from the dungeon after clearing a room.
+				</p>
+	</div> <!--end detailedRules-->
+</body>
+</html> 

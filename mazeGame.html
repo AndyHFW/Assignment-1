@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="assignment1.css">
+</head>
+
+<body>
+<header>
+	<nav>
+		<ul>
+			<li><a href="./jstestv3.html">Home</a></li>
+			<li><a href="./index.htm">Test link</a></li>
+		</ul>
+	</nav>
+</header>
+
+<h1>Maze test</h1>
+<div>
+	<textarea overflow-y: scroll; class="column" id="output" readonly>
+Welcome to this simple dungeon crawl. 
+Try to collect as much gold as you can before leaving or dying.
+You are currently in the dungeon entrance.
+	</textarea>
+
+	<div class="column">
+		<table id="showData">
+			<tr>
+				<th>Level</th>
+				<td id="levelCell" colspan="2"></td>
+			</tr>
+			<tr>
+				<th>HP</th>
+				<td id="hpCell"></td>
+				<td id="totalhpCell">/10</td>
+			</tr>
+			<tr>
+				<th>EXP</th>
+				<td id="expCell"></td>
+				<td id="totalexpCell">/5</td>
+			</tr>
+			<tr>
+				<th>Gold</th>
+				<td id="goldCell" colspan="2"></td>
+			</tr>
+		</table>
+		<table class="buttons">
+			<tr>
+				<td><button type="button" onclick="fightMonster()" id="fight">Fight</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" onclick="runMonster()" id="run">Run</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" onclick="roomType()" id="continue">Continue</button></td>
+			</tr>
+			<tr>
+				<td><button type="button" onclick="quitGame()" id="quit">Quit</button></td>
+			</tr>
+		</table>
+		<!--<textarea rows="1" cols="1" id="roll"></textarea>-->
+	</div>
+</div>
+
+<script src="mazeJS.js"></script>
+
+</body>
+</html> 
